@@ -37,7 +37,6 @@ def read_page(pagename):
     and the next nothing is 44827
 
     """
-    #global taglist, pagename
 
     response = urllib2.urlopen(pagename)
     j = response.read()
