@@ -1,7 +1,7 @@
-spoton
+
 ======
 
-web scraping technical test
+web scraping practice
 
 requires BeauifulSoup, i.e. 
 
