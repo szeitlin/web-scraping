@@ -22,7 +22,6 @@ def get_roothost(link):
     >>>get_root_host("http://pythonchallenge.com/pc/def/linkedlist.php?nothing=12345')
        pythonchallenge.com
     """
-    #global link, pagename, roothost
 
     roothost = "http://" + urlparse.urlparse(link).hostname #returns the "root domain" of the url
 
@@ -60,9 +59,7 @@ def find_event_strings(taglist):
        >>> "http://calendar.boston.com/lowell_ma/events/show/274127485-mrt-presents-shakespeares-will"
        http://www.boston.com/thingstodo/
        """
-    #global taglist, rawhitlist
-
-    rawhitlist = []
+   rawhitlist = []
 
     for tag in taglist:
         if "search?" in tag:
@@ -91,7 +88,6 @@ def remove_duplicates(rawhitlist):
     http:///boston_ma/events/show/368924700-toronto-blue-jays-vs-boston-red-sox
     http:///boston_ma/events/show/368924712-baltimore-orioles-vs-boston-red-sox
     """
-    #global rawhitlist, unique_hits, pagename, link
 
     unique_hits = []
 
@@ -153,7 +149,6 @@ def move_nonspecifics(unique_hits):
     categories = ["http://events.stanford.edu/xml/rss.xml", "http://events.stanford.edu/eventlist.ics"]
 
     """
-    #global unique_hits, categories
 
     categories = []
 
@@ -169,8 +164,6 @@ def move_nonspecifics(unique_hits):
 def make_pretty(unique_hits, roothost, howmany):
     """ return the final hitlist on separate lines with "http://" added if it's not there"""
 
-    #global unique_hits, howmany, roothost
-
     for item in unique_hits[:howmany]:
         if roothost not in item:
             item = roothost + item
@@ -180,8 +173,6 @@ def make_pretty(unique_hits, roothost, howmany):
 
 def return_only_ten():
     """ make this optional - to truncate the number of hits you return from a given domain"""
-
-    #global unique_hits, howmany
 
     # if "-g" in sys.argv:
     #     howmany = len(unique_hits)   #if greedy flag is turned on, get all the unique events
